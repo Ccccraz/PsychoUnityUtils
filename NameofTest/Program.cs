@@ -16,5 +16,7 @@ internal static class Program
         Console.WriteLine($"X: {dataName.X}, Y: {dataName.Y}, Z: {dataName.Z}");
 
         Console.WriteLine($"{nameof(dataName)}");
+        
+        Console.WriteLine($"{nameof(dataName.X)}");
     }
 }
