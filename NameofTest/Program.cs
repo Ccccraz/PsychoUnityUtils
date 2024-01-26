@@ -18,5 +18,25 @@ internal static class Program
         Console.WriteLine($"{nameof(dataName)}");
         
         Console.WriteLine($"{nameof(dataName.X)}");
+
+        var a = new TestStruct();
+        a.GetName();
+    }
+}
+
+public class TestStruct
+{
+    public TestStructure Data;
+
+    public void GetName()
+    {
+        Data = new TestStructure(new Vector3(1,2,3), new Vector2(1, 30));
+        Console.WriteLine($"{nameof(Data.PupilSize)}, {nameof(Data.GazePosition)}");
+    }
+    
+    public struct TestStructure(Vector3 pupilSize, Vector2 gazePosition)
+    {
+        public Vector3 PupilSize = pupilSize;
+        public Vector2 GazePosition = gazePosition;
     }
 }
