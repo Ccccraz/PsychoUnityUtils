@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetworkComClient", "NetworkComClient\NetworkComClient.csproj", "{34EE649A-BAD6-4825-91B3-77025D166E4B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetworkComClient", "NetworkComClient\NetworkComClient.csproj", "{BA05BE7F-D475-4152-AB27-6BA1303DA29F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetworkComServer", "NetworkComServer\NetworkComServer.csproj", "{F452858D-1CB3-45DB-B961-B57B31892760}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -8,9 +10,13 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{34EE649A-BAD6-4825-91B3-77025D166E4B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{34EE649A-BAD6-4825-91B3-77025D166E4B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{34EE649A-BAD6-4825-91B3-77025D166E4B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{34EE649A-BAD6-4825-91B3-77025D166E4B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA05BE7F-D475-4152-AB27-6BA1303DA29F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA05BE7F-D475-4152-AB27-6BA1303DA29F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA05BE7F-D475-4152-AB27-6BA1303DA29F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA05BE7F-D475-4152-AB27-6BA1303DA29F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F452858D-1CB3-45DB-B961-B57B31892760}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F452858D-1CB3-45DB-B961-B57B31892760}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F452858D-1CB3-45DB-B961-B57B31892760}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F452858D-1CB3-45DB-B961-B57B31892760}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
