@@ -1,41 +1,31 @@
-﻿using System.Net;
-using System.Net.Sockets;
-using System.Text;
+﻿using System.Text;
 
 namespace NetworkComServer;
 
 public static class Program
 {
-    private static async Task Main()
+    private static void Main()
     {
-        var ipEndPoint = new IPEndPoint(IPAddress.Parse("127.0.0.1"), 8888);
+        var listener = new TcpServer();
 
-        using Socket listener = new(ipEndPoint.AddressFamily, SocketType.Stream, ProtocolType.Tcp);
-        
-        listener.Bind(ipEndPoint);
-        listener.Listen(100);
+        var listenAsync = listener.ListenAsync();
 
-        var handler = await listener.AcceptAsync();
+        listener.DataReceived += PrintData;
 
         while (true)
         {
-            var buffer = new byte[1024];
-            var received = await handler.ReceiveAsync(buffer, SocketFlags.None);
-            var response = Encoding.UTF8.GetString(buffer, 0, received);
+            var msg = Console.ReadLine();
 
-            const string eom = "<|EOM|>";
-            if (response.IndexOf(eom) > -1)
+            if (msg == "stop")
             {
-                Console.WriteLine($"Socket server received message: \"{response.Replace(eom, "")}\"");
-
-                var ackMessage = "<|ACK|>";
-                var echoBytes = Encoding.UTF8.GetBytes(ackMessage);
-                await handler.SendAsync(echoBytes, 0);
-                
-                Console.WriteLine($"Socket server sent acknowledgment: \"{ackMessage}\"");
-                
                 break;
             }
         }
+    }
+    private static void PrintData(object sender, (byte[], int) e)
+    {
+        var msg = Encoding.UTF8.GetString(e.Item1);
+        
+        Console.WriteLine($"Received msg is: {msg}, the size of msg is: {e.Item2}");
     }
 }
