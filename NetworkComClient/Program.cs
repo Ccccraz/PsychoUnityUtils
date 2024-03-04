@@ -27,10 +27,8 @@ public static class Program
             var buffer = new byte[1024];
             var received = await client.ReceiveAsync(buffer, SocketFlags.None);
             var response = Encoding.UTF8.GetString(buffer, 0, received);
-            
-            if (response == "<|ACK|>")
-            {
-                Console.WriteLine($"Socket client received acknowledgment: \"{response}\"");
+
+            if(response == "over"){
                 break;
             }
         }

@@ -20,12 +20,18 @@ public static class Program
             {
                 break;
             }
+            else if (msg == "over")
+            {
+
+                var _ = listener.SendMsgAsync("over");
+            }
         }
     }
-    private static void PrintData(object sender, (byte[], int) e)
+    private static void PrintData(object sender, DataModel e)
     {
-        var msg = Encoding.UTF8.GetString(e.Item1);
-        
-        Console.WriteLine($"Received msg is: {msg}, the size of msg is: {e.Item2}");
+        var msg = Encoding.UTF8.GetString(e.Data);
+
+        Console.WriteLine($"Received msg is: {msg}, the size of msg is: {e.DataSize}");
+
     }
 }
